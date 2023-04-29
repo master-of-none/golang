@@ -12,6 +12,8 @@ func main() {
 
 	for input.Scan() {
 		counts[input.Text()]++
+
+		// in macOS ctrl + Z was not working so will be using "exit" to break the loop
 		if input.Text() == "exit" {
 			break
 		}
