@@ -14,13 +14,13 @@ func main() {
 			fmt.Fprintf(os.Stderr, "Fetch %v\n", err)
 			os.Exit(1)
 		}
-		b, err := io.Copy(os.Stdout, resp.Body)
+		_, err = io.Copy(os.Stdout, resp.Body)
 		resp.Body.Close()
 
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Fetch reading error %s: %v\n", url, err)
 			os.Exit(1)
 		}
-		fmt.Printf("%v", b)
+		// fmt.Printf("%v", b)
 	}
 }
